@@ -8,9 +8,9 @@
 	<include file="struts-default.xml" />
 	<package name="tkin" extends="struts-default">
 		<action name="register" class="regAction">
-			<result name="input">/Register.jsp</result>
-			<result name="success">/Success.jsp</result>
-			<result name="error">/Fail.jsp</result>
+			<result name="input">/user/Register.jsp</result>
+			<result name="success">/user/Success.jsp</result>
+			<result name="error">/user/Fail.jsp</result>
 		</action>
 	</package>
 

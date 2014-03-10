@@ -1,9 +1,10 @@
 package service.impl;
 
+import model.User;
+
 import org.hibernate.HibernateException;
 import org.springframework.beans.BeanUtils;
 
-import beans.User;
 import dao.BaseDao;
 import forms.UserForm;
 import service.UserManager;

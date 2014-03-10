@@ -43,7 +43,7 @@
 		</property>
 		<property name="annotatedClasses">
 			<list>
-				<value>beans.User</value>
+				<value>model.User</value>
 			</list>
 		</property>
 		<property name="hibernateProperties">
