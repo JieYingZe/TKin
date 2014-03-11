@@ -1,5 +1,7 @@
 package model;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -7,7 +9,10 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="user")
-public class User {
+public class User implements Serializable{
+
+
+	private static final long serialVersionUID = 5718989319171452150L;
 
 	private int userId;
 	private int type;

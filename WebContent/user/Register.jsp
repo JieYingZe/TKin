@@ -28,12 +28,13 @@
 		<s:password name="user.password" label="密码"></s:password>
 		<s:radio list="#{'1':'男','0':'女'}" listKey="key" listValue="value"
 			name="user.gender" label="性别" labelposition="inline" value="1"></s:radio>
-		<s:textfield name="user.age" label="年龄"  />
+		<s:textfield type="number" min="1" max="128" value="18" name="user.age" label="年龄"  />
 		<s:select
                         label="地址"
                         list="{'玄武区', '秦淮区', '鼓楼区', '建邺区', '雨花台区', '浦口区', '六合区', '栖霞区', '江宁区', '溧水区', '高淳区', '非南京地区'}"
                         name="user.address"
                         headerKey="None" headerValue="请选择您的地址"/>
+                        
 		<s:submit value="注册" cssClass="btn btn-primary btn-large"></s:submit>
 	</s:form>
     </div>

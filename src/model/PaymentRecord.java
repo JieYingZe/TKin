@@ -1,5 +1,6 @@
 package model;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.sql.Timestamp;
 
@@ -13,7 +14,9 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="paymentRecord")
-public class PaymentRecord {
+public class PaymentRecord implements Serializable{
+
+	private static final long serialVersionUID = -373427254802229742L;
 
 	private int paymentId;
 	private Timestamp time;
