@@ -45,7 +45,6 @@
 			<list>
 				<value>model.User</value>
 				<value>model.Family</value>
-				<value>model.PaymentRecord</value>
 			</list>
 		</property>
 		<property name="hibernateProperties">
