@@ -24,4 +24,11 @@ public class UserManagerImpl implements UserManager {
 		dao.saveObject(user);
 	}
 
+	@Override
+	public User loginUser(UserForm userForm) {
+		User user = new User();
+		BeanUtils.copyProperties(userForm, user);
+		return dao.getUserByNameAndPass(user.getUsername(), user.getPassword());
+	}
+
 }
