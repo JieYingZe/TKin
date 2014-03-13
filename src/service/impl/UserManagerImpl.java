@@ -1,5 +1,7 @@
 package service.impl;
 
+import java.util.List;
+
 import model.User;
 
 import org.hibernate.HibernateException;
@@ -29,6 +31,14 @@ public class UserManagerImpl implements UserManager {
 		User user = new User();
 		BeanUtils.copyProperties(userForm, user);
 		return dao.getUserByNameAndPass(user.getUsername(), user.getPassword());
+	}
+
+	@Override
+	public List<User> showUser() {
+		
+		
+		
+		return null;
 	}
 
 }

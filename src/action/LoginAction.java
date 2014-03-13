@@ -1,23 +1,23 @@
 package action;
 
-import com.opensymphony.xwork2.ActionSupport;
+import model.User;
 import forms.UserForm;
 import service.UserManager;
 
-public class LoginAction extends ActionSupport {
+public class LoginAction extends BaseAction {
 
 	private static final long serialVersionUID = 1L;
 
-	private UserForm user;
+	private UserForm userForm;
 
 	private UserManager userManager;
 
 	public UserForm getUser() {
-		return user;
+		return userForm;
 	}
 
 	public void setUser(UserForm user) {
-		this.user = user;
+		this.userForm = user;
 	}
 
 	public void setUserManager(UserManager userManager) {
@@ -25,7 +25,10 @@ public class LoginAction extends ActionSupport {
 	}
 
 	public String execute() {
-			if(userManager.loginUser(user)!=null){
+		User user = userManager.loginUser(userForm);
+			if(user != null){
+				session().setAttribute("userid", user.getUserId());
+				session().setAttribute("username", user.getUsername());
 				return SUCCESS;
 			}else {
 				return ERROR;
