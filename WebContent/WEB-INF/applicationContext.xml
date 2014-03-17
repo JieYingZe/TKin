@@ -90,6 +90,18 @@
 			<ref bean="userManager" />
 		</property>
 	</bean>
+	
+	<bean id="showUserAction" class="action.ShowUserAction" scope="prototype">
+		<property name="userManager">
+			<ref bean="userManager" />
+		</property>
+	</bean>
+	
+	<bean id="showActivityAction" class="action.ShowActivityAction" scope="prototype">
+		<property name="userManager">
+			<ref bean="userManager" />
+		</property>
+	</bean>
 
 	<!-- more bean definitions go here -->
 

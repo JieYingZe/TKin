@@ -1,6 +1,7 @@
 package service.impl;
 
-import java.util.List;
+
+import java.util.ArrayList;
 
 import model.User;
 
@@ -34,11 +35,9 @@ public class UserManagerImpl implements UserManager {
 	}
 
 	@Override
-	public List<User> showUser() {
-		
-		
-		
-		return null;
+	public ArrayList<User> showUser() {
+		ArrayList<User> userList = dao.getAllUser();
+		return userList;
 	}
 
 }

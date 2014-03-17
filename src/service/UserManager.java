@@ -1,6 +1,6 @@
 package service;
 
-import java.util.List;
+import java.util.ArrayList;
 
 import model.User;
 import forms.UserForm;
@@ -11,7 +11,7 @@ public interface UserManager {
 
 	public User loginUser(UserForm user);
 
-	public List<User> showUser();
+	public ArrayList<User> showUser();
 
 }
 

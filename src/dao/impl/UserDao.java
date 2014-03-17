@@ -1,6 +1,6 @@
 package dao.impl;
 
-import java.util.List;
+import java.util.ArrayList;
 
 import model.User;
 
@@ -16,12 +16,21 @@ public class UserDao extends HibernateDaoSupport implements BaseDao {
 		getHibernateTemplate().save(obj);
 	}
 	
+	@Override
 	public User getUserByNameAndPass(String username, String password) throws HibernateException {
-		String sql = "from User u where u.username=? and u.password=?";
+		String hql = "from User u where u.username=? and u.password=?";
 		@SuppressWarnings("unchecked")
-		List<User> userList = getHibernateTemplate().find(sql, new Object[] { username, password });
+		ArrayList<User> userList = (ArrayList<User>) getHibernateTemplate().find(hql, new Object[] { username, password });
 		System.out.println(userList.size());
 		return userList.size() == 0 ? null : userList.get(0);
+	}
+
+	@Override
+	public ArrayList<User> getAllUser() {
+		String hql = "from User";
+		@SuppressWarnings("unchecked")
+		ArrayList<User> userList =(ArrayList<User>) getHibernateTemplate().find(hql);
+		return userList;
 	}
 
 }

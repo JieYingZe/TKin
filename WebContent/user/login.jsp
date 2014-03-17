@@ -8,6 +8,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>User Login Page</title>
 
+	<link href="../all.css" rel="stylesheet">
+
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -15,7 +17,7 @@
     <sb:head/>
 
 </head>
-<body>
+<body class="body-singnin">
 
     <s:actionerror theme="bootstrap"/>
     <s:actionmessage theme="bootstrap"/>
@@ -23,10 +25,10 @@
 
 
 	<div class="container"> 
-	<s:form action="login" theme="bootstrap" cssClass="form-horizontal">
+	<s:form action="login" theme="bootstrap" cssClass="form-horizontal form-signin">
 		<s:textfield name="user.username" label="用户名"></s:textfield>
 		<s:password name="user.password" label="密码"></s:password>
-		<s:submit value="登陆" cssClass="btn btn-primary btn-large"></s:submit>
+		<s:submit value="登录" cssClass="btn btn-primary btn-large"></s:submit>
 	</s:form>
     </div>
 </body>

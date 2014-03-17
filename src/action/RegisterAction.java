@@ -1,6 +1,7 @@
 package action;
 
 import com.opensymphony.xwork2.ActionSupport;
+
 import forms.UserForm;
 import service.UserManager;
 
@@ -26,6 +27,7 @@ public class RegisterAction extends ActionSupport {
 
 	public String execute() {
 		try {
+			System.out.println("Register Action");
 			userManager.regUser(user);
 			return SUCCESS;
 

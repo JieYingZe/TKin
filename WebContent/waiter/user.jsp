@@ -21,9 +21,34 @@
     <s:actionmessage theme="bootstrap"/>
     <s:fielderror theme="bootstrap"/>
 
-
-	<div class="container"> 
-	<s:action name="showUser" ></s:action>
+	<s:action name="showUser"></s:action>
+	<div class="container">
+		<table class="table table-striped table-bordered">
+		    <tr>
+      			<th>卡号</th>
+      			<th>卡类型</th>
+      			<th>用户名</th>
+      			<th>性别</th>
+      			<th>年龄</th>
+      			<th>地址</th>
+      			<th>会员资格</th>
+    		</tr>
+			<s:iterator value="#request.userList">
+				<tr >
+					<td><s:property value="cardNo"/></td>
+					<td><s:if test='gender==0'>会员卡</s:if><s:else>家庭卡</s:else></td>
+					<td><s:property value="username"/></td>
+					<td><s:if test='gender==1'>男</s:if><s:else>女</s:else></td>
+					<td><s:property value="age"/></td>
+					<td><s:property value="address"/></td>
+					<td><s:if test='qualifications==0'>未激活</s:if>
+						<s:elseif test='qualifications=1'>正常</s:elseif>
+						<s:elseif test='qualifications=2'>暂停</s:elseif>
+						<s:else>停止</s:else>
+					</td>
+				</tr>
+  			</s:iterator>
+		</table>
     </div>
 </body>
 </html>

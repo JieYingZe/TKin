@@ -25,6 +25,7 @@ public class LoginAction extends BaseAction {
 	}
 
 	public String execute() {
+		System.out.println("Login Action");
 		User user = userManager.loginUser(userForm);
 			if(user != null){
 				session().setAttribute("userid", user.getUserId());

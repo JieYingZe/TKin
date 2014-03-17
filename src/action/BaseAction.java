@@ -10,8 +10,10 @@ import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 
 
+
 //import com.opensymphony.xwork2.Action;
 import com.opensymphony.xwork2.ActionSupport;
+
 
 
 
@@ -41,6 +43,7 @@ public class BaseAction extends ActionSupport{
     }
 	@Override
 	public String execute() throws Exception {
+		System.out.println("Base Action");
 		// TODO Auto-generated method stub
 		return null;
 	}
