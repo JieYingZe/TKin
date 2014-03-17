@@ -5,7 +5,7 @@ import java.util.Calendar;
 public class ActivityForm {
 
 	private int activityId;
-	private int activityName;
+	private String activityName;
 	private Calendar startTime;
 	private Calendar endTime;
 	private String site;
@@ -17,10 +17,10 @@ public class ActivityForm {
 	public void setActivityId(int activityId) {
 		this.activityId = activityId;
 	}
-	public int getActivityName() {
+	public String getActivityName() {
 		return activityName;
 	}
-	public void setActivityName(int activityName) {
+	public void setActivityName(String activityName) {
 		this.activityName = activityName;
 	}
 	public Calendar getStartTime() {

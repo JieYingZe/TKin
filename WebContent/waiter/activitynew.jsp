@@ -26,8 +26,10 @@
 	<s:form action="addActivity" theme="bootstrap" cssClass="form-horizontal">
 		<s:textfield name="activity.activityName" label="活动名称"></s:textfield>
 		<s:textfield name="activity.coach" label="教练"></s:textfield>
+		<!--
 		<s:textfield name="activity.startTime" label="起始时间"></s:textfield>
 		<s:textfield name="activity.endTime" label="结束时间"></s:textfield>
+		-->
 		<s:textfield name="activity.site" label="地点"></s:textfield>
 		<s:submit value="新增活动" cssClass="btn btn-primary btn-large"></s:submit>
 	</s:form>

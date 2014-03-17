@@ -65,21 +65,23 @@
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
 
-	<bean id="baseDao" class="dao.impl.UserDao">
+	<bean id="userDao" class="dao.impl.UserDao">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>
 	</bean>
+	
+	
 
 	<!--用户注册业务逻辑类 -->
 	<bean id="userManager" class="service.impl.UserManagerImpl">
 		<property name="dao">
-			<ref bean="baseDao" />
+			<ref bean="userDao" />
 		</property>
 	</bean>
 	<bean id="activityManager" class="service.impl.ActivityManagerImpl">
 		<property name="dao">
-			<ref bean="baseDao" />
+			<ref bean="userDao" />
 		</property>
 	</bean>
 
