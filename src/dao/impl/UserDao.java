@@ -17,6 +17,11 @@ public class UserDao extends HibernateDaoSupport implements BaseDao {
 	}
 	
 	@Override
+	public void updateObject(Object obj) throws HibernateException {
+		getHibernateTemplate().update(obj);
+	}
+	
+	@Override
 	public User getUserByNameAndPass(String username, String password) throws HibernateException {
 		String hql = "from User u where u.username=? and u.password=?";
 		@SuppressWarnings("unchecked")
@@ -32,5 +37,7 @@ public class UserDao extends HibernateDaoSupport implements BaseDao {
 		ArrayList<User> userList =(ArrayList<User>) getHibernateTemplate().find(hql);
 		return userList;
 	}
+
+
 
 }

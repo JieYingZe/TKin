@@ -55,7 +55,7 @@
      		<div class="span6">
           		<h2>家庭卡</h2>
           		<p>$100/卡，$55/月+($10/孩子)</p>
-          		<p><a class="btn btn-success" href="./user/register.jsp">立即注册</a></p>
+          		<p><a class="btn btn-success" href="./user/familyregister.jsp">立即注册</a></p>
      		</div>
      	</div>
      </div>

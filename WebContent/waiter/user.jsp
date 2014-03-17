@@ -36,7 +36,7 @@
 			<s:iterator value="#request.userList">
 				<tr >
 					<td><s:property value="cardNo"/></td>
-					<td><s:if test='gender==0'>会员卡</s:if><s:else>家庭卡</s:else></td>
+					<td><s:if test='type==0'>会员卡</s:if><s:else>家庭卡</s:else></td>
 					<td><s:property value="username"/></td>
 					<td><s:if test='gender==1'>男</s:if><s:else>女</s:else></td>
 					<td><s:property value="age"/></td>

@@ -84,7 +84,12 @@
 			<ref bean="userManager" />
 		</property>
 	</bean>
-
+	<bean id="familyregAction" class="action.FamilyRegisterAction" scope="prototype">
+		<property name="userManager">
+			<ref bean="userManager" />
+		</property>
+	</bean>
+	
 	<bean id="loginAction" class="action.LoginAction" scope="prototype">
 		<property name="userManager">
 			<ref bean="userManager" />

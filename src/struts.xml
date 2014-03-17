@@ -12,6 +12,11 @@
 			<result name="success">/user/success.jsp</result>
 			<result name="error">/user/fail.jsp</result>
 		</action>
+		<action name="familyRegister" class="familyregAction">
+			<result name="input">/user/familyregister.jsp</result>
+			<result name="success">/user/success.jsp</result>
+			<result name="error">/user/fail.jsp</result>
+		</action>
 		<action name="login" class="loginAction">
 			<result name="input">/user/login.jsp</result>
 			<result name="success">/user/success.jsp</result>
