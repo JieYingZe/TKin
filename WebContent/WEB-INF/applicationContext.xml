@@ -77,6 +77,11 @@
 			<ref bean="baseDao" />
 		</property>
 	</bean>
+	<bean id="activityManager" class="service.impl.ActivityManagerImpl">
+		<property name="dao">
+			<ref bean="baseDao" />
+		</property>
+	</bean>
 
 	<!-- 用户注册的Action -->
 	<bean id="regAction" class="action.RegisterAction" scope="prototype">
@@ -105,6 +110,12 @@
 	<bean id="showActivityAction" class="action.ShowActivityAction" scope="prototype">
 		<property name="userManager">
 			<ref bean="userManager" />
+		</property>
+	</bean>
+	
+	<bean id="addActivityAction" class="action.AddActivityAction" scope="prototype">
+		<property name="activityManager">
+			<ref bean="activityManager" />
 		</property>
 	</bean>
 

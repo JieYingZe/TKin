@@ -2,6 +2,7 @@ package dao.impl;
 
 import java.util.ArrayList;
 
+import model.Activity;
 import model.User;
 
 import org.hibernate.HibernateException;
@@ -36,6 +37,14 @@ public class UserDao extends HibernateDaoSupport implements BaseDao {
 		@SuppressWarnings("unchecked")
 		ArrayList<User> userList =(ArrayList<User>) getHibernateTemplate().find(hql);
 		return userList;
+	}
+
+	@Override
+	public ArrayList<Activity> getAllActivity() {
+		String hql = "from Activity";
+		@SuppressWarnings("unchecked")
+		ArrayList<Activity> activityList =(ArrayList<Activity>) getHibernateTemplate().find(hql);
+		return activityList;
 	}
 
 

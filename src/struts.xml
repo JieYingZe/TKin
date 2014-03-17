@@ -27,7 +27,12 @@
 			<result name="success">/user/success.jsp</result>
 			<result name="error">/user/fail.jsp</result>
 		</action>
-		<action name="showUser" class="showUserAction" method="execute">
+		<action name="showUser" class="showUserAction">
+			<result name="input">/waiter/login.jsp</result>
+			<result name="success">/user/success.jsp</result>
+			<result name="error">/user/fail.jsp</result>
+		</action>
+		<action name="addActivity" class="addActivityAction">
 			<result name="input">/waiter/login.jsp</result>
 			<result name="success">/user/success.jsp</result>
 			<result name="error">/user/fail.jsp</result>

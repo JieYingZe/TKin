@@ -23,19 +23,13 @@
 
 
 	<div class="container"> 
-	<s:form action="register" theme="bootstrap" cssClass="form-horizontal">
-		<s:textfield name="user.username" label="用户名"></s:textfield>
-		<s:password name="user.password" label="密码"></s:password>
-		<s:radio list="#{'1':'男','0':'女'}" listKey="key" listValue="value"
-			name="user.gender" label="性别" labelposition="inline" value="1"></s:radio>
-		<s:textfield type="number" min="1" max="128" value="18" name="user.age" label="年龄"  />
-		<s:select
-                        label="地址"
-                        list="{'玄武区', '秦淮区', '鼓楼区', '建邺区', '雨花台区', '浦口区', '六合区', '栖霞区', '江宁区', '溧水区', '高淳区', '非南京地区'}"
-                        name="user.address"
-                        headerKey="None" headerValue="请选择您的地址"/>
-                        
-		<s:submit value="注册" cssClass="btn btn-primary btn-large"></s:submit>
+	<s:form action="addActivity" theme="bootstrap" cssClass="form-horizontal">
+		<s:textfield name="activity.activityName" label="活动名称"></s:textfield>
+		<s:textfield name="activity.coach" label="教练"></s:textfield>
+		<s:textfield name="activity.startTime" label="起始时间"></s:textfield>
+		<s:textfield name="activity.endTime" label="结束时间"></s:textfield>
+		<s:textfield name="activity.site" label="地点"></s:textfield>
+		<s:submit value="新增活动" cssClass="btn btn-primary btn-large"></s:submit>
 	</s:form>
     </div>
 </body>
