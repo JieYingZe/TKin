@@ -10,16 +10,16 @@ import model.User;
 import org.hibernate.HibernateException;
 import org.springframework.beans.BeanUtils;
 
-import dao.BaseDao;
+import dao.UserDao;
 import forms.FamilyForm;
 import forms.UserForm;
 import service.UserManager;
 
 public class UserManagerImpl implements UserManager {
 
-	private BaseDao dao;
+	private UserDao dao;
 
-	public void setDao(BaseDao dao) {
+	public void setDao(UserDao dao) {
 		this.dao = dao;
 	}
 

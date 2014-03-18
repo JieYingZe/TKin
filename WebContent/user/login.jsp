@@ -8,7 +8,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>User Login Page</title>
 
-	<link href="../all.css" rel="stylesheet">
+	<link href="../css/all.css" rel="stylesheet">
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]>

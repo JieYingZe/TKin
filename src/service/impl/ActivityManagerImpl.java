@@ -8,15 +8,15 @@ import model.Activity;
 import org.hibernate.HibernateException;
 import org.springframework.beans.BeanUtils;
 
-import dao.BaseDao;
+import dao.ActivityDao;
 import forms.ActivityForm;
 import service.ActivityManager;
 
 public class ActivityManagerImpl implements ActivityManager {
 
-	private BaseDao dao;
+	private ActivityDao dao;
 
-	public void setDao(BaseDao dao) {
+	public void setDao(ActivityDao dao) {
 		this.dao = dao;
 	}
 

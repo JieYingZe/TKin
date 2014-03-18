@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>New Activity Page</title>
+<title>Activity Management Page</title>
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]>
@@ -21,16 +21,26 @@
     <s:actionmessage theme="bootstrap"/>
     <s:fielderror theme="bootstrap"/>
 
-
-	<div class="container"> 
-	<s:form action="addActivity" theme="bootstrap" cssClass="form-horizontal">
-		<s:textfield name="activity.activityName" label="活动名称"></s:textfield>
-		<s:textfield name="activity.coach" label="教练"></s:textfield>
-		<s:textfield type="datetime-local" name="activity.startTime" label="起始时间"></s:textfield>
-		<s:textfield type="datetime-local" name="activity.endTime" label="结束时间"></s:textfield>
-		<s:textfield name="activity.site" label="地点"></s:textfield>
-		<s:submit value="新增活动" cssClass="btn btn-primary btn-large"></s:submit>
-	</s:form>
+	<s:action name="showActivity"></s:action>
+	<div class="container">
+		<table class="table table-striped table-bordered">
+		    <tr>
+      			<th>活动名称</th>
+      			<th>教练</th>
+      			<th>起始时间</th>
+      			<th>结束时间</th>
+      			<th>地点</th>
+    		</tr>
+			<s:iterator value="#request.activityList">
+				<tr>
+					<td><s:property value="activityName"/></td>
+					<td><s:property value="coach"/></td>
+					<td><s:date name="startTime" format="yyyy-MM-dd hh:mm"/></td>
+					<td><s:date name="endTime" format="yyyy-MM-dd hh:mm"/></td>
+					<td><s:property value="site"/></td>
+				</tr>
+  			</s:iterator>
+		</table>
     </div>
 </body>
 </html>

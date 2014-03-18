@@ -2,13 +2,12 @@ package dao;
 
 import java.util.ArrayList;
 
-import model.Activity;
 import model.User;
 
 import org.hibernate.HibernateException;
 
 
-public interface BaseDao {
+public interface UserDao {
 
 	public void saveObject(Object obj) throws HibernateException;
 	
@@ -16,8 +15,7 @@ public interface BaseDao {
 	
 	public User getUserByNameAndPass(String username, String password) throws HibernateException;
 	
-	public ArrayList<User> getAllUser();
+	public ArrayList<User> getAllUser() throws HibernateException;
 
-	public ArrayList<Activity> getAllActivity();
-
+	
 }
