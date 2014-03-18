@@ -30,6 +30,7 @@ public class AddActivityAction extends ActionSupport {
 	public String execute() {
 		try {
 			System.out.println("Add Activity Action");
+			System.out.println(activity.getStartTime());
 			activityManager.addActivity(activity);
 			return SUCCESS;
 

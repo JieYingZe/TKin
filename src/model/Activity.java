@@ -1,6 +1,7 @@
 package model;
 
-import java.util.Calendar;
+
+import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,8 +15,8 @@ public class Activity {
 
 	private int activityId;
 	private String activityName;
-	private Calendar startTime;
-	private Calendar endTime;
+	private Date startTime;
+	private Date endTime;
 	private String site;
 	private String coach;
 	
@@ -33,16 +34,16 @@ public class Activity {
 	public void setActivityName(String activityName) {
 		this.activityName = activityName;
 	}
-	public Calendar getStartTime() {
+	public Date getStartTime() {
 		return startTime;
 	}
-	public void setStartTime(Calendar startTime) {
+	public void setStartTime(Date startTime) {
 		this.startTime = startTime;
 	}
-	public Calendar getEndTime() {
+	public Date getEndTime() {
 		return endTime;
 	}
-	public void setEndTime(Calendar endTime) {
+	public void setEndTime(Date endTime) {
 		this.endTime = endTime;
 	}
 	public String getSite() {

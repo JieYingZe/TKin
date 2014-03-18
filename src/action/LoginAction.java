@@ -35,5 +35,11 @@ public class LoginAction extends BaseAction {
 				return ERROR;
 			}
 	}
+	
+	public String logout(){
+		session().removeAttribute("userid");
+		session().removeAttribute("username");
+		return SUCCESS;
+	}
 
 }
