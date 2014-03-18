@@ -2,15 +2,14 @@ package dao.impl;
 
 import java.util.ArrayList;
 
-import model.Activity;
 import model.User;
 
 import org.hibernate.HibernateException;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
-import dao.BaseDao;
+import dao.UserDao;
 
-public class UserDao extends HibernateDaoSupport implements BaseDao {
+public class UserDaoImpl extends HibernateDaoSupport implements UserDao {
 
 	@Override
 	public void saveObject(Object obj) throws HibernateException {
@@ -32,21 +31,12 @@ public class UserDao extends HibernateDaoSupport implements BaseDao {
 	}
 
 	@Override
-	public ArrayList<User> getAllUser() {
+	public ArrayList<User> getAllUser() throws HibernateException{
 		String hql = "from User";
 		@SuppressWarnings("unchecked")
 		ArrayList<User> userList =(ArrayList<User>) getHibernateTemplate().find(hql);
 		return userList;
 	}
-
-	@Override
-	public ArrayList<Activity> getAllActivity() {
-		String hql = "from Activity";
-		@SuppressWarnings("unchecked")
-		ArrayList<Activity> activityList =(ArrayList<Activity>) getHibernateTemplate().find(hql);
-		return activityList;
-	}
-
 
 
 }

@@ -71,6 +71,11 @@
 		</property>
 	</bean>
 	
+	<bean id="activityDao" class="dao.impl.ActivityDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
 	
 
 	<!--用户注册业务逻辑类 -->
@@ -81,7 +86,7 @@
 	</bean>
 	<bean id="activityManager" class="service.impl.ActivityManagerImpl">
 		<property name="dao">
-			<ref bean="userDao" />
+			<ref bean="activityDao" />
 		</property>
 	</bean>
 
@@ -110,8 +115,8 @@
 	</bean>
 	
 	<bean id="showActivityAction" class="action.ShowActivityAction" scope="prototype">
-		<property name="userManager">
-			<ref bean="userManager" />
+		<property name="acivityManager">
+			<ref bean="acivityManager" />
 		</property>
 	</bean>
 	
