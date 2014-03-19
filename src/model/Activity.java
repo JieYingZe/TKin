@@ -1,6 +1,7 @@
 package model;
 
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -11,8 +12,9 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="activity")
-public class Activity {
+public class Activity implements Serializable{
 
+	private static final long serialVersionUID = 6927253813655077726L;
 	private int activityId;
 	private String activityName;
 	private Date startTime;

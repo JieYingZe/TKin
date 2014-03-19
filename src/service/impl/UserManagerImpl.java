@@ -85,4 +85,12 @@ public class UserManagerImpl implements UserManager {
 		}
 	}
 
+	@Override
+	public void updateUser(int userId, UserForm userForm) {
+		User user = dao.getUserById(userId);
+		BeanUtils.copyProperties(userForm, user);
+		user.setUserId(userId);
+		dao.updateObject(user);
+	}
+
 }

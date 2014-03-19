@@ -20,9 +20,9 @@
 <body class="body-singnin">
 
 	<div class="container"> 
-	<s:form action="showUserInfo" theme="bootstrap" cssClass="form-horizontal form-signin">
+	<s:form action="updateUserInfo" theme="bootstrap" cssClass="form-horizontal form-signin">
 		<s:textfield name="user.username" label="用户名" ></s:textfield>
-		<s:password name="user.password" label="密码"></s:password>
+		<s:password  name="user.password" label="密码" showPassword="true"></s:password>
 		<s:radio list="#{'1':'男','0':'女'}" listKey="key" listValue="value"
 			name="user.gender" label="性别" labelposition="inline"></s:radio>
 		<s:textfield type="number" min="1" max="128"  name="user.age" label="年龄"  />

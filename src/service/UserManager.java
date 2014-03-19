@@ -19,6 +19,8 @@ public interface UserManager {
 	public UserForm showUserInfo(int userid);
 
 	public FamilyForm showFamilyInfo(int userId);
+
+	public void updateUser(int userid, UserForm user);
 	
 }
 

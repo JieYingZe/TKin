@@ -29,8 +29,9 @@
           </button>
           <a class="brand" href="#">天健</a>
           <div class="nav-collapse collapse">
-			<a class="btn btn-primary pull-right" href='<s:url action="logout"/>'> <s:property value="#session.username" /></a>
-			<a class="btn btn-primary pull-right" href='<s:url action="showUserInfo"/>'> <s:property value="#session.userid" /></a>
+          	<a class="btn btn-primary pull-right" href='<s:url action="logout"/>'> 注销</a>
+          	欢迎<s:property value="#session.username" />
+			<a class="btn btn-primary pull-right" href='<s:url action="showUserInfo"/>'> 查看个人信息</a>
           </div><!--/.nav-collapse -->
         </div>
       </div>
