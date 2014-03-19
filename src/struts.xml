@@ -37,6 +37,11 @@
 			<result name="success">/user/success.jsp</result>
 			<result name="error">/user/fail.jsp</result>
 		</action>
+		<action name="showUserInfo" class="showUserInfoAction">
+			<result name="input">/user/login.jsp</result>
+			<result name="success">/user/userinfo.jsp</result>
+			<result name="error">/user/fail.jsp</result>
+		</action>
 		<action name="addActivity" class="addActivityAction">
 			<result name="input">/waiter/activitynew.jsp</result>
 			<result name="success">/user/success.jsp</result>

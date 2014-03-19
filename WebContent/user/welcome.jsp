@@ -30,6 +30,7 @@
           <a class="brand" href="#">天健</a>
           <div class="nav-collapse collapse">
 			<a class="btn btn-primary pull-right" href='<s:url action="logout"/>'> <s:property value="#session.username" /></a>
+			<a class="btn btn-primary pull-right" href='<s:url action="showUserInfo"/>'> <s:property value="#session.userid" /></a>
           </div><!--/.nav-collapse -->
         </div>
       </div>

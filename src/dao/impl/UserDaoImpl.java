@@ -2,6 +2,7 @@ package dao.impl;
 
 import java.util.ArrayList;
 
+import model.Family;
 import model.User;
 
 import org.hibernate.HibernateException;
@@ -36,6 +37,18 @@ public class UserDaoImpl extends HibernateDaoSupport implements UserDao {
 		@SuppressWarnings("unchecked")
 		ArrayList<User> userList =(ArrayList<User>) getHibernateTemplate().find(hql);
 		return userList;
+	}
+
+	@Override
+	public User getUserById(int userId) throws HibernateException {
+		User user = (User) getHibernateTemplate().get(User.class, userId);
+		return user;
+	}
+
+	@Override
+	public Family getFamilyByUserId(int userId) {
+		Family family = (Family) getHibernateTemplate().get(Family.class, userId);
+		return family;
 	}
 
 

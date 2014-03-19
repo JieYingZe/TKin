@@ -64,4 +64,25 @@ public class UserManagerImpl implements UserManager {
 		dao.updateObject(user);
 	}
 
+	@Override
+	public UserForm showUserInfo(int userId) {
+		User user = dao.getUserById(userId);
+		UserForm userForm = new UserForm();
+		BeanUtils.copyProperties(user, userForm);
+		return userForm;
+	}
+	
+	@Override
+	public FamilyForm showFamilyInfo(int userId) {
+		User user = dao.getUserById(userId);
+		if (user.getType()==1) {
+			Family family = dao.getFamilyByUserId(userId);
+			FamilyForm familyForm = new FamilyForm();
+			BeanUtils.copyProperties(family, familyForm);
+			return familyForm;
+		}else {
+			return null;
+		}
+	}
+
 }

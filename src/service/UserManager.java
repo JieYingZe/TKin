@@ -16,5 +16,9 @@ public interface UserManager {
 
 	public ArrayList<User> showUser();
 
+	public UserForm showUserInfo(int userid);
+
+	public FamilyForm showFamilyInfo(int userId);
+	
 }
 
