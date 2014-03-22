@@ -32,7 +32,8 @@
           	<a class="btn btn-primary pull-right" href='<s:url action="logout"/>'> 注销</a>
           	欢迎<s:property value="#session.username" />
 			<a class="btn btn-primary pull-right" href='<s:url action="showUserInfo"/>'> 查看个人信息</a>
-			<a class="btn btn-primary pull-right" href='<s:url action="showActivity"/>'>查看所有活动</a>
+			<a class="btn btn-primary pull-right" href='<s:url action="showActivityForUser"/>'>查看所有活动</a>
+			<a class="btn btn-primary pull-right" href='<s:url action="showActivityRecord"/>'>查看活动记录</a>
           </div><!--/.nav-collapse -->
         </div>
       </div>

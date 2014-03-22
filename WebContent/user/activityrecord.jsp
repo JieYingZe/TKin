@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Activity Page</title>
+<title>Activity Record Page</title>
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]>
@@ -29,26 +29,18 @@
       			<th>起始时间</th>
       			<th>结束时间</th>
       			<th>地点</th>
-      			<th>操作</th>
+      			<th>状态</th>
     		</tr>
-			<s:iterator value="activityList">
+			<s:iterator value="activityRecordList">
 				<tr>
 					<td><s:property value="activityName"/></td>
 					<td><s:property value="coach"/></td>
 					<td><s:date name="startTime" format="yyyy-MM-dd hh:mm"/></td>
 					<td><s:date name="endTime" format="yyyy-MM-dd hh:mm"/></td>
 					<td><s:property value="site"/></td>
-					<td>
-					<s:form action="reserveActivity" style="margin:0px">
-					<s:if test='status==-1'>
-						<s:hidden name="activityId"></s:hidden>
-						<input type="submit"  value="预约" class="btn btn-success">
-					</s:if>
-					<s:elseif test='status==0'><span class="text-info">已预约</span></s:elseif>
-					<s:elseif test='status==1'><span class="text-info">已参加</span></s:elseif>
-					<s:else><span class="text-inverse">已错过</span></s:else>
-					</s:form>
-					</td>
+					<td><s:if test='status==0'><span class="text-success">已预约</span></s:if>
+						<s:elseif test='status==1'><span class="text-info">已参加</span></s:elseif>
+						<s:else><span class="text-inverse">已错过</span></s:else></td>
 				</tr>
   			</s:iterator>
 		</table>

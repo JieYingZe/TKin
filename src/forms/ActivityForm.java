@@ -10,6 +10,7 @@ public class ActivityForm {
 	private Date endTime;
 	private String site;
 	private String coach;
+	private int status;
 	private boolean isReserved;
 	
 	public boolean isReserved() {
@@ -53,5 +54,11 @@ public class ActivityForm {
 	}
 	public void setCoach(String coach) {
 		this.coach = coach;
+	}
+	public int getStatus() {
+		return status;
+	}
+	public void setStatus(int status) {
+		this.status = status;
 	}
 }

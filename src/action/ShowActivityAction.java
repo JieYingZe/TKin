@@ -11,8 +11,6 @@ public class ShowActivityAction extends BaseAction {
 	private ArrayList<ActivityForm> activityList = new ArrayList<>();
 	private ActivityManager activityManager;
 
-
-
 	public ArrayList<ActivityForm> getActivityList() {
 		return activityList;
 	}
@@ -25,7 +23,19 @@ public class ShowActivityAction extends BaseAction {
 		this.activityManager = activityManager;
 	}
 
-	public String execute() {
+	public String showActivityForUser() {
+		try {
+			System.out.println("Show Activity Action");
+			int userId = (int) session().getAttribute("userid");
+			activityList = activityManager.showActivity(userId);
+			return SUCCESS;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return ERROR;
+		}
+	}
+	
+	public String showActivityForWaiter() {
 		try {
 			System.out.println("Show Activity Action");
 			activityList = activityManager.showActivity();

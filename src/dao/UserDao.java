@@ -22,5 +22,4 @@ public interface UserDao {
 
 	public Family getFamilyByUserId(int userId);
 
-	
 }

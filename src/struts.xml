@@ -7,6 +7,7 @@
 
 	<include file="struts-default.xml" />
 	<package name="tkin" extends="struts-default">
+<!--————————————————————————————————————————避免眼花的分割线————————————————————————————————————————-->
 		<action name="register" class="regAction">
 			<result name="input">/user/register.jsp</result>
 			<result name="success">/user/success.jsp</result>
@@ -17,21 +18,45 @@
 			<result name="success">/user/success.jsp</result>
 			<result name="error">/user/fail.jsp</result>
 		</action>
+<!--————————————————————————————————————————避免眼花的分割线————————————————————————————————————————-->
 		<action name="login" class="loginAction">
 			<result name="input">/user/login.jsp</result>
-			<result name="success">/user/welcome.jsp</result>
+			<result name="success" type="redirect">/user/welcome.jsp</result>
 			<result name="error">/user/fail.jsp</result>
 		</action>
 		<action name="logout" class="loginAction" method="logout">
 			<result name="input">/user/login.jsp</result>
-			<result name="success">/index.jsp</result>
+			<result name="success" type="redirect">/index.jsp</result>
 			<result name="error">/user/fail.jsp</result>
 		</action>
-		<action name="showActivity" class="showActivityAction">
+<!--————————————————————————————————————————避免眼花的分割线————————————————————————————————————————-->
+		<action name="showActivityForUser" class="showActivityAction" method="showActivityForUser">
 			<result name="input">/user/login.jsp</result>
+			<result name="success">/user/activity.jsp</result>
+			<result name="error">/user/fail.jsp</result>
+		</action>
+		<action name="showActivityForWaiter" class="showActivityAction" method="showActivityForWaiter">
+			<result name="input">/waiter/login.jsp</result>
+			<result name="success">/waiter/activity.jsp</result>
+			<result name="error">/user/fail.jsp</result>
+		</action>
+		<action name="showActivityRecord" class="showActivityRecordAction">
+			<result name="input">/waiter/login.jsp</result>
+			<result name="success">/user/activityrecord.jsp</result>
+			<result name="error">/user/fail.jsp</result>
+		</action>
+<!--————————————————————————————————————————避免眼花的分割线————————————————————————————————————————-->
+		<action name="addActivity" class="addActivityAction">
+			<result name="input">/waiter/activitynew.jsp</result>
 			<result name="success">/user/success.jsp</result>
 			<result name="error">/user/fail.jsp</result>
 		</action>
+		<action name="reserveActivity" class="reserveActivityAction">
+			<result name="input">/user/login.jsp</result>
+			<result name="success" type="redirect">showActivityForUser</result>
+			<result name="error">/user/fail.jsp</result>
+		</action>
+<!--————————————————————————————————————————避免眼花的分割线————————————————————————————————————————-->
 		<action name="showUser" class="showUserAction">
 			<result name="input">/waiter/login.jsp</result>
 			<result name="success">/user/success.jsp</result>
@@ -42,21 +67,7 @@
 			<result name="success">/user/userinfo.jsp</result>
 			<result name="error">/user/fail.jsp</result>
 		</action>
-		<action name="addActivity" class="addActivityAction">
-			<result name="input">/waiter/activitynew.jsp</result>
-			<result name="success">/user/success.jsp</result>
-			<result name="error">/user/fail.jsp</result>
-		</action>
-		<action name="showActivity" class="showActivityAction">
-			<result name="input">/waiter/login.jsp</result>
-			<result name="success">/user/activity.jsp</result>
-			<result name="error">/user/fail.jsp</result>
-		</action>
-		<action name="reserveActivity" class="reserveActivityAction">
-			<result name="input">/user/login.jsp</result>
-			<result name="success">/user/activity.jsp</result>
-			<result name="error">/user/fail.jsp</result>
-		</action>
+
 		<action name="updateUserInfo" class="updateUserInfoAction">
 			<result name="input">/user/login.jsp</result>
 			<result name="success">/user/userinfo.jsp</result>

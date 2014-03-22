@@ -3,6 +3,8 @@ package dao.impl;
 import java.util.ArrayList;
 
 import model.Activity;
+import model.ActivityRecord;
+import model.User;
 
 import org.hibernate.HibernateException;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
@@ -29,6 +31,20 @@ public class ActivityDaoImpl extends HibernateDaoSupport implements ActivityDao 
 		return activityList;
 	}
 
+	@Override
+	public Activity getActivityById(int activityId) {
+		Activity activity = (Activity) getHibernateTemplate().get(Activity.class, activityId);
+		return activity;
+	}
 
+	@Override
+	public ArrayList<ActivityRecord> getActivityRecord(User user) {
+		String hql = "from ActivityRecord ar where ar.user=?";
+		@SuppressWarnings("unchecked")
+		ArrayList<ActivityRecord> activityRecordList =(ArrayList<ActivityRecord>) getHibernateTemplate().find(hql,user);
+		return activityRecordList;
+	}
+
+	
 
 }

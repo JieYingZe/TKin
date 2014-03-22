@@ -24,7 +24,9 @@ public class ReserveActivityAction extends BaseAction {
 	public String execute() {
 		try {
 			System.out.println("Reserve Activity Action");
-			System.out.println(activityId);
+			int userId = (int) session().getAttribute("userid");
+			System.out.println("User"+userId+" reserve acitivity"+activityId);
+			activityManager.reserveActivity(userId, activityId);
 			return SUCCESS;
 		} catch (Exception e) {
 			e.printStackTrace();

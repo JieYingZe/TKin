@@ -37,7 +37,7 @@ public class ActivityRecord implements Serializable{
 	}
 	
 	@Id
-	@ManyToOne(targetEntity=Activity.class, fetch=FetchType.LAZY)
+	@ManyToOne(targetEntity=Activity.class, fetch=FetchType.EAGER)
 	@JoinColumn(name="fk_activity_activityId")
 	public Activity getActivity() {
 		return activity;
