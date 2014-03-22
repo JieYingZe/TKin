@@ -21,9 +21,32 @@
     <s:actionmessage theme="bootstrap"/>
     <s:fielderror theme="bootstrap"/>
 
-
-	<div class="container"> 
-	<s:action name="showActivity" ></s:action>
+	<div class="container">
+		<table class="table table-striped table-bordered">
+		    <tr>
+      			<th>活动名称</th>
+      			<th>教练</th>
+      			<th>起始时间</th>
+      			<th>结束时间</th>
+      			<th>地点</th>
+      			<th>操作</th>
+    		</tr>
+			<s:iterator value="activityList">
+				<tr>
+					<td><s:property value="activityName"/></td>
+					<td><s:property value="coach"/></td>
+					<td><s:date name="startTime" format="yyyy-MM-dd hh:mm"/></td>
+					<td><s:date name="endTime" format="yyyy-MM-dd hh:mm"/></td>
+					<td><s:property value="site"/></td>
+					<td>
+					<s:form action="reserveActivity" style="margin:0px">
+					<s:hidden name="activityId"></s:hidden>
+					<input type="submit"  value="预约" class="btn btn-success">
+					</s:form>
+					</td>
+				</tr>
+  			</s:iterator>
+		</table>
     </div>
 </body>
 </html>

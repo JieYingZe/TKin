@@ -10,7 +10,14 @@ public class ActivityForm {
 	private Date endTime;
 	private String site;
 	private String coach;
+	private boolean isReserved;
 	
+	public boolean isReserved() {
+		return isReserved;
+	}
+	public void setReserved(boolean isReserved) {
+		this.isReserved = isReserved;
+	}
 	public int getActivityId() {
 		return activityId;
 	}

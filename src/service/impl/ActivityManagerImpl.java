@@ -28,6 +28,19 @@ public class ActivityManagerImpl implements ActivityManager {
 	}
 
 	@Override
+	public ArrayList<ActivityForm> showActivity(int userId) {
+		ArrayList<ActivityForm> activityFormList = new ArrayList<ActivityForm>();
+		ArrayList<Activity> activityList = dao.getAllActivity();
+		for(Activity activity:activityList){
+			ActivityForm activityForm = new ActivityForm();
+			BeanUtils.copyProperties(activity, activityForm);
+			activityFormList.add(activityForm);
+		}
+
+		return activityFormList;
+	}
+	
+	@Override
 	public ArrayList<Activity> showActivity() {
 		ArrayList<Activity> activityList = dao.getAllActivity();
 		return activityList;

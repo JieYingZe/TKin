@@ -132,6 +132,12 @@
 		</property>
 	</bean>
 	
+	<bean id="reserveActivityAction" class="action.ReserveActivityAction" scope="prototype">
+		<property name="activityManager">
+			<ref bean="activityManager" />
+		</property>
+	</bean>
+	
 	<bean id="addActivityAction" class="action.AddActivityAction" scope="prototype">
 		<property name="activityManager">
 			<ref bean="activityManager" />

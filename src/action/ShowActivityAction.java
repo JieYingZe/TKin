@@ -2,23 +2,24 @@ package action;
 
 import java.util.ArrayList;
 
-import model.Activity;
+import forms.ActivityForm;
 import service.ActivityManager;
 
 public class ShowActivityAction extends BaseAction {
 
 	private static final long serialVersionUID = 1L;
-	private ArrayList<Activity> activityList = new ArrayList<>();
+	private ArrayList<ActivityForm> activityList = new ArrayList<>();
 	private ActivityManager activityManager;
 
-	public ArrayList<Activity> getActivityList() {
+
+
+	public ArrayList<ActivityForm> getActivityList() {
 		return activityList;
 	}
 
-	public void setActivityList(ArrayList<Activity> activityList) {
+	public void setActivityList(ArrayList<ActivityForm> activityList) {
 		this.activityList = activityList;
 	}
-
 
 	public void setActivityManager(ActivityManager activityManager) {
 		this.activityManager = activityManager;
@@ -28,7 +29,6 @@ public class ShowActivityAction extends BaseAction {
 		try {
 			System.out.println("Show Activity Action");
 			activityList = activityManager.showActivity();
-			request().setAttribute("activityList", activityList);
 			return SUCCESS;
 		} catch (Exception e) {
 			e.printStackTrace();

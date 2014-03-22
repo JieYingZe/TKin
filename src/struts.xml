@@ -49,7 +49,12 @@
 		</action>
 		<action name="showActivity" class="showActivityAction">
 			<result name="input">/waiter/login.jsp</result>
-			<result name="success">/user/success.jsp</result>
+			<result name="success">/user/activity.jsp</result>
+			<result name="error">/user/fail.jsp</result>
+		</action>
+		<action name="reserveActivity" class="reserveActivityAction">
+			<result name="input">/user/login.jsp</result>
+			<result name="success">/user/activity.jsp</result>
 			<result name="error">/user/fail.jsp</result>
 		</action>
 		<action name="updateUserInfo" class="updateUserInfoAction">
