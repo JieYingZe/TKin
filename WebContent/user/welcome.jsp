@@ -34,6 +34,7 @@
 			<a class="btn btn-primary pull-right" href='<s:url action="showUserInfo"/>'> 查看个人信息</a>
 			<a class="btn btn-primary pull-right" href='<s:url action="showActivityForUser"/>'>查看所有活动</a>
 			<a class="btn btn-primary pull-right" href='<s:url action="showActivityRecord"/>'>查看活动记录</a>
+			<a class="btn btn-primary pull-right" href='<s:url action="showPayment"/>'>查看支付记录</a>
           </div><!--/.nav-collapse -->
         </div>
       </div>

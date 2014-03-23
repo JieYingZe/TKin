@@ -11,6 +11,7 @@ public class PaymentRecordForm implements Serializable{
 	private int paymentId;
 	private Timestamp time;
 	private BigDecimal money;
+	private String bankCardNo;
 	
 	public int getPaymentId() {
 		return paymentId;
@@ -30,5 +31,10 @@ public class PaymentRecordForm implements Serializable{
 	public void setMoney(BigDecimal money) {
 		this.money = money;
 	}
-	
+	public String getBankCardNo() {
+		return bankCardNo;
+	}
+	public void setBankCardNo(String bankCardNo) {
+		this.bankCardNo = bankCardNo;
+	}
 }

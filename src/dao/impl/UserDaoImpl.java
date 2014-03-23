@@ -27,7 +27,6 @@ public class UserDaoImpl extends HibernateDaoSupport implements UserDao {
 		String hql = "from User u where u.username=? and u.password=?";
 		@SuppressWarnings("unchecked")
 		ArrayList<User> userList = (ArrayList<User>) getHibernateTemplate().find(hql, new Object[] { username, password });
-		System.out.println(userList.size());
 		return userList.size() == 0 ? null : userList.get(0);
 	}
 

@@ -24,7 +24,7 @@ public class User implements Serializable{
 	private int gender;
 	private String address;
 	private int age;
-	private int bankCardNo;
+	private String bankCardNo;
 	private int qualifications;
 	
 	@Id
@@ -77,10 +77,10 @@ public class User implements Serializable{
 	public void setAge(int age) {
 		this.age = age;
 	}
-	public int getBankCardNo() {
+	public String getBankCardNo() {
 		return bankCardNo;
 	}
-	public void setBankCardNo(int bankCardNo) {
+	public void setBankCardNo(String bankCardNo) {
 		this.bankCardNo = bankCardNo;
 	}
 	public int getQualifications() {

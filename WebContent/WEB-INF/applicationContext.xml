@@ -77,6 +77,11 @@
 		</property>
 	</bean>
 	
+	<bean id="paymentDao" class="dao.impl.PaymentDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
 
 	<!--用户注册业务逻辑类 -->
 	<bean id="userManager" class="service.impl.UserManagerImpl">
@@ -87,6 +92,14 @@
 	<bean id="activityManager" class="service.impl.ActivityManagerImpl">
 		<property name="activityDao">
 			<ref bean="activityDao" />
+		</property>
+		<property name="userDao">
+			<ref bean="userDao" />
+		</property>
+	</bean>
+	<bean id="paymentManager" class="service.impl.PaymentManagerImpl">
+		<property name="paymentDao">
+			<ref bean="paymentDao" />
 		</property>
 		<property name="userDao">
 			<ref bean="userDao" />
@@ -149,6 +162,17 @@
 	<bean id="addActivityAction" class="action.AddActivityAction" scope="prototype">
 		<property name="activityManager">
 			<ref bean="activityManager" />
+		</property>
+	</bean>
+	
+	<bean id="showPaymentAction" class="action.ShowPaymentAction" scope="prototype">
+		<property name="paymentManager">
+			<ref bean="paymentManager" />
+		</property>
+	</bean>
+	<bean id="payAction" class="action.PayAction" scope="prototype">
+		<property name="paymentManager">
+			<ref bean="paymentManager" />
 		</property>
 	</bean>
 
