@@ -1,6 +1,7 @@
 package dao.impl;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import model.Family;
 import model.User;
@@ -52,9 +53,25 @@ public class UserDaoImpl extends HibernateDaoSupport implements UserDao {
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public int getCountByAttrAndVal(String attr, String val) {
+	public Long getCountByAttrAndVal(String attr, String val) {
 		String hql = "select COUNT(*) from User u where u." + attr + "=" + val;
 		ArrayList<Long> count = (ArrayList<Long>) getHibernateTemplate().find(hql);
-		return (int) (count.size() > 0 ? (count.get(0)) : 0);
+		return (count.size() > 0 ? (count.get(0)) : 0L);
+	}
+	
+	@Override
+	public List<Object[]> getGroupCountByAttr(String attr) {
+		String hql = "select u." + attr + ", COUNT(*) from User u group by u." + attr;
+		@SuppressWarnings("unchecked")
+		List<Object[]> count = getHibernateTemplate().find(hql);
+		return count;
+	}
+
+	@Override
+	public Long getCountByAttrAndRange(String attr, int min, int max) {
+		String hql = "select COUNT(*) from User u where u." + attr + ">=? and u." + attr + " <=?";
+		@SuppressWarnings("unchecked")
+		ArrayList<Long> count = (ArrayList<Long>) getHibernateTemplate().find(hql, new Object[]{ min, max });
+		return (count.size() > 0 ? (count.get(0)) : 0L);
 	}
 }

@@ -24,14 +24,34 @@
     <s:fielderror theme="bootstrap"/>
 
 	<div class="container">
+		<div id="age"></div>
+		<div class="hide" id="ageInfo">
+			[<s:iterator value="userStatistics.ageGroupCount">
+				['<s:property value="key" />', <s:property value="value" />],
+			</s:iterator>]
+		</div>
+		
 		<div id="gender"></div>
 		<div class="hide" id="genderInfo">
 			[
 				['男', <s:property value="userStatistics.maleCount" />],
-				['女', <s:property value="userStatistics.femaleCount" />]
+				['女', <s:property value="userStatistics.femaleCount" />],
 			]
 		</div>
+
+		<div id="addr"></div>
+		<div class="hide" id="addrInfo">
+			[<s:iterator value="userStatistics.addrCount">
+				['<s:property value="key" />', <s:property value="value" />],
+			</s:iterator>]
+		</div>
 		
+		<div id="qualifications"></div>
+		<div class="hide" id="qualificationsInfo">
+			[<s:iterator value="userStatistics.qualificationsCount">
+				['<s:property value="key" />', <s:property value="value" />],
+			</s:iterator>]
+		</div>
     </div>
     <script type="text/javascript" src="../js/jquery-1.8.3.min.js"></script>
 	<script src="../js/highcharts.js"></script>

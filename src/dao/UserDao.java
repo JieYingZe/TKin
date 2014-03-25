@@ -1,6 +1,7 @@
 package dao;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import model.Family;
 import model.User;
@@ -22,6 +23,10 @@ public interface UserDao {
 
 	public Family getFamilyByUserId(int userId);
 
-	public int getCountByAttrAndVal(String attr, String val);
+	public Long getCountByAttrAndVal(String attr, String val);
+
+	List<Object[]> getGroupCountByAttr(String attr);
+
+	public Long getCountByAttrAndRange(String attr, int min, int max);
 
 }

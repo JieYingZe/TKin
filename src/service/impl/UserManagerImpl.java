@@ -3,6 +3,9 @@ package service.impl;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import model.Family;
 import model.User;
@@ -96,8 +99,32 @@ public class UserManagerImpl implements UserManager {
 	public UserStatistics showUserStatistics() {
 		UserStatistics userStatistics = new UserStatistics();
 		
+		Map<String, Long> ageGroupCount = new HashMap<String, Long>();
+		ageGroupCount.put("儿童：0~6岁", userDao.getCountByAttrAndRange("age", 0, 6));
+		ageGroupCount.put("少年：7~17岁", userDao.getCountByAttrAndRange("age", 7, 17));
+		ageGroupCount.put("青年：18~40岁", userDao.getCountByAttrAndRange("age", 18, 40));
+		ageGroupCount.put("中年人：41~65岁", userDao.getCountByAttrAndRange("age", 41, 65));
+		ageGroupCount.put("老年人：66岁以上", userDao.getCountByAttrAndRange("age", 66, 128));
+		userStatistics.setAgeGroupCount(ageGroupCount);
+		
 		userStatistics.setMaleCount(userDao.getCountByAttrAndVal("gender", "1"));
 		userStatistics.setFemaleCount(userDao.getCountByAttrAndVal("gender", "0"));
+		
+		Map<String, Long> addrCount = new HashMap<String, Long>();
+		List<Object[]> addrCountList = userDao.getGroupCountByAttr("address");
+		for (Object[] addrCountListItem : addrCountList) {
+			addrCount.put((String) addrCountListItem[0], (Long) addrCountListItem[1]);
+		}
+		userStatistics.setAddrCount(addrCount);
+		
+		Map<String, Long> qualificationsCount = new HashMap<String, Long>();
+		qualificationsCount.put("未激活", userDao.getCountByAttrAndVal("qualifications", "0"));
+		qualificationsCount.put("有效", userDao.getCountByAttrAndVal("qualifications", "1"));
+		qualificationsCount.put("暂停", userDao.getCountByAttrAndVal("qualifications", "2"));
+		qualificationsCount.put("停止", userDao.getCountByAttrAndVal("qualifications", "3"));
+		qualificationsCount.put("取消", userDao.getCountByAttrAndVal("qualifications", "4"));
+		userStatistics.setQualificationsCount(qualificationsCount);
+		
 		return userStatistics;
 	}
 
