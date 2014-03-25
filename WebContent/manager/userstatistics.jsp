@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>User Statistics</title>
+<title>User Statistics Page</title>
 
 	<link href="../css/all.css" rel="stylesheet">
 
@@ -17,14 +17,27 @@
     <sb:head/>
 
 </head>
-<body class="body-singnin">
+<body>
 
     <s:actionerror theme="bootstrap"/>
     <s:actionmessage theme="bootstrap"/>
     <s:fielderror theme="bootstrap"/>
 
 	<div class="container">
-
+		<div id="gender"></div>
+		<div class="hide" id="genderInfo">
+			[
+				['男', <s:property value="userStatistics.maleCount" />],
+				['女', <s:property value="userStatistics.femaleCount" />]
+			]
+		</div>
+		
     </div>
+    <script type="text/javascript" src="../js/jquery-1.8.3.min.js"></script>
+	<script src="../js/highcharts.js"></script>
+	<script src="../js/data.js"></script>
+	<script src="../js/drilldown.js"></script>
+	<script src="../js/exporting.js"></script>
+	<script src="../js/user-statistics.js"></script>
 </body>
 </html>

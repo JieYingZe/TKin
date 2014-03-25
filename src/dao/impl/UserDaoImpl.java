@@ -50,5 +50,11 @@ public class UserDaoImpl extends HibernateDaoSupport implements UserDao {
 		return family;
 	}
 
-
+	@SuppressWarnings("unchecked")
+	@Override
+	public int getCountByAttrAndVal(String attr, String val) {
+		String hql = "select COUNT(*) from User u where u." + attr + "=" + val;
+		ArrayList<Long> count = (ArrayList<Long>) getHibernateTemplate().find(hql);
+		return (int) (count.size() > 0 ? (count.get(0)) : 0);
+	}
 }

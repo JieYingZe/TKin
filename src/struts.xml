@@ -78,9 +78,15 @@
 			<result name="success">/user/payment.jsp</result>
 			<result name="error">/user/fail.jsp</result>
 		</action>
-		<action name="activeMember" class="payAction" method="activeMember">
+		<action name="activeUser" class="payAction" method="activeUser">
 			<result name="input">/user/login.jsp</result>
 			<result name="success" type="redirect">showPayment</result>
+			<result name="error">/user/fail.jsp</result>
+		</action>
+<!--————————————————————————————————————————避免眼花的分割线————————————————————————————————————————-->
+		<action name="showUserStatistics" class="showUserStatisticsAction">
+			<result name="input">/manager/login.jsp</result>
+			<result name="success">/manager/userstatistics.jsp</result>
 			<result name="error">/user/fail.jsp</result>
 		</action>
 	</package>

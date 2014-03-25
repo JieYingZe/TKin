@@ -175,6 +175,11 @@
 			<ref bean="paymentManager" />
 		</property>
 	</bean>
+	<bean id="showUserStatisticsAction" class="action.ShowUserStatisticsAction" scope="prototype">
+		<property name="userManager">
+			<ref bean="userManager" />
+		</property>
+	</bean>
 
 	<!-- more bean definitions go here -->
 

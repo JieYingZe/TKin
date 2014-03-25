@@ -1,15 +1,22 @@
 package action;
 
-import java.math.BigDecimal;
-
 import forms.PaymentRecordForm;
+import forms.UserForm;
 import service.PaymentManager;
 
 public class PayAction extends BaseAction {
-
 	private static final long serialVersionUID = 1L;
+	private UserForm user;
 	private PaymentRecordForm paymentRecord;
 	private PaymentManager paymentManager;
+
+	public UserForm getUser() {
+		return user;
+	}
+
+	public void setUser(UserForm user) {
+		this.user = user;
+	}
 
 	public PaymentRecordForm getPaymentRecord() {
 		return paymentRecord;
@@ -27,8 +34,7 @@ public class PayAction extends BaseAction {
 		try {
 			System.out.println("Pay Action");
 			int userId = (int) session().getAttribute("userid");
-			paymentRecord.setMoney(new BigDecimal(80.00));
-			paymentManager.newPayment(userId, paymentRecord);
+			paymentManager.activeUser(userId, paymentRecord);
 			return SUCCESS;
 		} catch (Exception e) {
 			e.printStackTrace();

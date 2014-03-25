@@ -1,6 +1,7 @@
 package service.impl;
 
 
+import java.math.BigDecimal;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 
@@ -28,8 +29,20 @@ public class PaymentManagerImpl implements PaymentManager {
 	}
 
 	@Override
-	public void newPayment(int userId, PaymentRecordForm paymentRecordForm) {
+	public void activeUser(int userId, PaymentRecordForm paymentRecordForm) {
 		User user = userDao.getUserById(userId);
+		BigDecimal activeMoney;
+		if (user.getType() == 0) {
+			activeMoney = new BigDecimal(80.00);
+		} else {
+			activeMoney = new BigDecimal(100.00);
+		}
+		paymentRecordForm.setMoney(activeMoney);
+		newPayment(user, paymentRecordForm);
+	}
+	
+	@Override
+	public void newPayment(User user, PaymentRecordForm paymentRecordForm) {
 		PaymentRecord paymentRecord = new PaymentRecord();
 		BeanUtils.copyProperties(paymentRecordForm, paymentRecord);
 		paymentRecord.setUser(user);
@@ -61,4 +74,6 @@ public class PaymentManagerImpl implements PaymentManager {
 		}
 		return paymentRecordFormList;
 	}
+
+
 }

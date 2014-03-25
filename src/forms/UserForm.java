@@ -7,6 +7,24 @@ public class UserForm {
 	private int gender;
 	private int age;
 	private String address;
+	private int qualifications;
+	private int type;
+
+	public int getQualifications() {
+		return qualifications;
+	}
+
+	public void setQualifications(int qualifications) {
+		this.qualifications = qualifications;
+	}
+
+	public int getType() {
+		return type;
+	}
+
+	public void setType(int type) {
+		this.type = type;
+	}
 
 	public String getUsername() {
 		return username;

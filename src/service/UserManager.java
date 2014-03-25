@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import model.User;
 import forms.FamilyForm;
 import forms.UserForm;
+import forms.UserStatistics;
 
 public interface UserManager {
 
@@ -21,6 +22,8 @@ public interface UserManager {
 	public FamilyForm showFamilyInfo(int userId);
 
 	public void updateUser(int userid, UserForm user);
+
+	public UserStatistics showUserStatistics();
 	
 }
 

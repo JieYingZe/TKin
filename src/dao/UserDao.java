@@ -22,4 +22,6 @@ public interface UserDao {
 
 	public Family getFamilyByUserId(int userId);
 
+	public int getCountByAttrAndVal(String attr, String val);
+
 }

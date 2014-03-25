@@ -13,6 +13,7 @@ import org.springframework.beans.BeanUtils;
 import dao.UserDao;
 import forms.FamilyForm;
 import forms.UserForm;
+import forms.UserStatistics;
 import service.UserManager;
 
 public class UserManagerImpl implements UserManager {
@@ -32,8 +33,6 @@ public class UserManagerImpl implements UserManager {
 		user.setCardNo(("M"+new DecimalFormat("000000").format(user.getUserId())));
 		userDao.updateObject(user);
 	}
-
-	
 	
 	@Override
 	public User loginUser(UserForm userForm) {
@@ -91,6 +90,15 @@ public class UserManagerImpl implements UserManager {
 		BeanUtils.copyProperties(userForm, user);
 		user.setUserId(userId);
 		userDao.updateObject(user);
+	}
+
+	@Override
+	public UserStatistics showUserStatistics() {
+		UserStatistics userStatistics = new UserStatistics();
+		
+		userStatistics.setMaleCount(userDao.getCountByAttrAndVal("gender", "1"));
+		userStatistics.setFemaleCount(userDao.getCountByAttrAndVal("gender", "0"));
+		return userStatistics;
 	}
 
 }
