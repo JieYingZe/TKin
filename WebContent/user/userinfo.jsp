@@ -17,8 +17,35 @@
     <sb:head/>
 
 </head>
-<body class="body-singnin">
 
+<body class="body-singnin" style="padding-top: 60px; padding-bottom: 40px;">
+	<div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="/TKin/user/welcome.jsp">天健</a>
+          
+          <div class="nav-collapse collapse">
+
+            <ul class="nav">
+              <li class="active"><a href='<s:url action="user/showUserInfo" />'> 查看个人信息</a></li>
+			  <li><a href='<s:url action="user/showActivityForUser" />'>查看所有活动</a></li>
+			  <li><a href='<s:url action="user/showActivityRecord" />'>查看活动记录</a></li>
+			  <li><a href='<s:url action="user/showPayment" />'>查看支付记录</a></li>
+            </ul>
+			
+          	<a class="btn btn-primary pull-right" href='<s:url action="logout"/>'> 注销</a>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+    
 	<div class="container"> 
 	<s:form action="updateUserInfo" theme="bootstrap" cssClass="form-horizontal form-signin">
 		<s:textfield name="user.username" label="用户名" ></s:textfield>

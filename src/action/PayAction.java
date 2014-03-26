@@ -30,7 +30,7 @@ public class PayAction extends BaseAction {
 		this.paymentManager = paymentManager;
 	}
 
-	public String activeMember() {
+	public String activeUser() {
 		try {
 			System.out.println("Pay Action");
 			int userId = (int) session().getAttribute("userid");

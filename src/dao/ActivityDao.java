@@ -1,6 +1,7 @@
 package dao;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 import model.Activity;
 import model.ActivityRecord;
@@ -20,5 +21,11 @@ public interface ActivityDao {
 	public Activity getActivityById(int activityId);
 
 	public ArrayList<ActivityRecord> getActivityRecord(User user);
+
+	public Map<String, Long> getGroupCountByAttr(String attr);
+
+	public Map<String, Long> getPeopleCountMonthly();
+
+	public Map<String, Long> getPeopleCountDaily();
 
 }

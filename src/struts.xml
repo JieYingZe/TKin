@@ -22,6 +22,7 @@
 		<action name="login" class="loginAction">
 			<result name="input">/user/login.jsp</result>
 			<result name="success" type="redirect">/user/welcome.jsp</result>
+			<result name="ACTIVE" type="redirect">/user/pay.jsp</result>
 			<result name="error">/user/fail.jsp</result>
 		</action>
 		<action name="logout" class="loginAction" method="logout">
@@ -53,7 +54,7 @@
 		</action>
 		<action name="reserveActivity" class="reserveActivityAction">
 			<result name="input">/user/login.jsp</result>
-			<result name="success" type="redirect">showActivityForUser</result>
+			<result name="success" type="redirect">/user/showActivityForUser</result>
 			<result name="error">/user/fail.jsp</result>
 		</action>
 <!--————————————————————————————————————————避免眼花的分割线————————————————————————————————————————-->
@@ -69,7 +70,7 @@
 		</action>
 		<action name="updateUserInfo" class="updateUserInfoAction">
 			<result name="input">/user/login.jsp</result>
-			<result name="success">/user/userinfo.jsp</result>
+			<result name="success"  type="redirect">/user/showUserInfo</result>
 			<result name="error">/user/fail.jsp</result>
 		</action>
 <!--————————————————————————————————————————避免眼花的分割线————————————————————————————————————————-->
@@ -80,13 +81,18 @@
 		</action>
 		<action name="activeUser" class="payAction" method="activeUser">
 			<result name="input">/user/login.jsp</result>
-			<result name="success" type="redirect">showPayment</result>
+			<result name="success" type="redirect">/user/showPayment</result>
 			<result name="error">/user/fail.jsp</result>
 		</action>
 <!--————————————————————————————————————————避免眼花的分割线————————————————————————————————————————-->
 		<action name="showUserStatistics" class="showUserStatisticsAction">
 			<result name="input">/manager/login.jsp</result>
 			<result name="success">/manager/userstatistics.jsp</result>
+			<result name="error">/user/fail.jsp</result>
+		</action>
+		<action name="showClubStatistics" class="showClubStatisticsAction">
+			<result name="input">/manager/login.jsp</result>
+			<result name="success">/manager/clubstatistics.jsp</result>
 			<result name="error">/user/fail.jsp</result>
 		</action>
 	</package>

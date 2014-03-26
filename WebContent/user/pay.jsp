@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>User Statistics</title>
+<title>Pay</title>
 
 	<link href="../css/all.css" rel="stylesheet">
 
@@ -24,7 +24,10 @@
     <s:fielderror theme="bootstrap"/>
 
 	<div class="container">
-
+	<s:form action="activeUser" theme="bootstrap" cssClass="form-horizontal form-signin">
+		<s:textfield name="paymentRecord.bankCardNo" label="请输入你的银行卡号"></s:textfield>
+		<s:submit value="激活会员卡" cssClass="btn btn-primary btn-large"></s:submit>
+	</s:form>
     </div>
 </body>
 </html>

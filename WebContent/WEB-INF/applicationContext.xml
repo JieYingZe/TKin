@@ -180,6 +180,11 @@
 			<ref bean="userManager" />
 		</property>
 	</bean>
+	<bean id="showClubStatisticsAction" class="action.ShowClubStatisticsAction" scope="prototype">
+		<property name="activityManager">
+			<ref bean="activityManager" />
+		</property>
+	</bean>
 
 	<!-- more bean definitions go here -->
 

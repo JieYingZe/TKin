@@ -2,6 +2,9 @@ package service.impl;
 
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import model.Activity;
 import model.ActivityRecord;
@@ -12,6 +15,7 @@ import org.springframework.beans.BeanUtils;
 import dao.ActivityDao;
 import dao.UserDao;
 import forms.ActivityForm;
+import forms.ClubStatistics;
 import service.ActivityManager;
 
 public class ActivityManagerImpl implements ActivityManager {
@@ -85,5 +89,17 @@ public class ActivityManagerImpl implements ActivityManager {
 			}
 		}
 		return activityList;
+	}
+
+	@Override
+	public ClubStatistics showClubStatistics() {
+		ClubStatistics clubStatistics = new ClubStatistics();
+
+		clubStatistics.setPeopleCountDaily(activityDao.getPeopleCountDaily());
+		clubStatistics.setPeopleCountMonthly(activityDao.getPeopleCountMonthly());
+		clubStatistics.setSiteCount(activityDao.getGroupCountByAttr("site"));
+		clubStatistics.setCoachCount(activityDao.getGroupCountByAttr("coach"));
+		
+		return clubStatistics;
 	}
 }

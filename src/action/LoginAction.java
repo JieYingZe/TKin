@@ -30,7 +30,12 @@ public class LoginAction extends BaseAction {
 			if(user != null){
 				session().setAttribute("userid", user.getUserId());
 				session().setAttribute("username", user.getUsername());
-				return SUCCESS;
+				if (user.getQualifications()==1) {
+					return SUCCESS;
+				}else {
+					return "ACTIVE";
+				}
+
 			}else {
 				return ERROR;
 			}

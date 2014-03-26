@@ -32,6 +32,7 @@
           	<a class="btn btn-primary pull-right" href='<s:url action="logout"/>'> 注销</a>
           	欢迎<s:property value="#session.username" />
 			<a class="btn btn-primary pull-right" href='<s:url action="showUserStatistics"/>'> 查看用户统计</a>
+			<a class="btn btn-primary pull-right" href='<s:url action="showClubStatistics"/>'> 查看俱乐部统计</a>
           </div><!--/.nav-collapse -->
         </div>
       </div>
