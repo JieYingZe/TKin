@@ -27,17 +27,26 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="brand" href="#">天健</a>
+          <a class="brand" href="/TKin/manager/welcome.jsp">天健</a>
           <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li><a href='<s:url action="showUserStatistics"/>'> 查看用户统计</a></li>
+			  <li><a href='<s:url action="showClubStatistics"/>'> 查看俱乐部统计</a></li>
+            </ul>
           	<a class="btn btn-primary pull-right" href='<s:url action="logout"/>'> 注销</a>
-          	欢迎<s:property value="#session.username" />
-			<a class="btn btn-primary pull-right" href='<s:url action="showUserStatistics"/>'> 查看用户统计</a>
-			<a class="btn btn-primary pull-right" href='<s:url action="showClubStatistics"/>'> 查看俱乐部统计</a>
           </div><!--/.nav-collapse -->
         </div>
       </div>
     </div>
     
- 
+        <div class="container">
+    
+    		<div class="hero-unit">
+        	<h1>天行健，君子以自强不息</h1>
+        	<p>@伏尔泰：生命在于运动 </p>
+        	<p>@泰戈尔：静止便是死亡</p>
+        	<p>@希尔康：不会管理自己身体的人，就无资格管理他人；经营不好自己健康的人，又如何经营好他的事业</p>
+      	</div>
+ </div>
 </body>
 </html>

@@ -86,4 +86,12 @@ public class ActivityDaoImpl extends HibernateDaoSupport implements ActivityDao 
 		}
 		return countMap;
 	}
+
+	@Override
+	public ActivityRecord getActivityRecord(User user, Activity activity) {
+		String hql = "from ActivityRecord ar where ar.user=? and ar.activity=?";
+		@SuppressWarnings("unchecked")
+		ArrayList<ActivityRecord> activityRecordList =(ArrayList<ActivityRecord>) getHibernateTemplate().find(hql,new Object[] { user, activity });
+		return activityRecordList.size() == 0 ? null : activityRecordList.get(0);
+	}
 }

@@ -9,6 +9,7 @@
 <title>New Activity Page</title>
 
    <link href="../css/bootstrap-datetimepicker.css" rel="stylesheet" media="screen">
+   <link href="../css/all.css" rel="stylesheet">
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]>
@@ -17,7 +18,7 @@
     <sb:head/>
 
 </head>
-<body>
+<body class="body-singnin">
 
     <s:actionerror theme="bootstrap"/>
     <s:actionmessage theme="bootstrap"/>
@@ -25,7 +26,7 @@
 
 
 	<div class="container"> 
-	<s:form action="addActivity" theme="bootstrap" cssClass="form-horizontal">
+	<s:form action="addActivity" theme="bootstrap" cssClass="form-horizontal form-signin">
 		<s:textfield name="activity.activityName" label="活动名称"></s:textfield>
 		<s:textfield name="activity.coach" label="教练"></s:textfield>
 		<s:textfield cssClass="form_datetime" name="activity.startTime" label="起始时间"></s:textfield>

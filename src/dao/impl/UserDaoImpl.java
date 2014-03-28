@@ -74,4 +74,12 @@ public class UserDaoImpl extends HibernateDaoSupport implements UserDao {
 		ArrayList<Long> count = (ArrayList<Long>) getHibernateTemplate().find(hql, new Object[]{ min, max });
 		return (count.size() > 0 ? (count.get(0)) : 0L);
 	}
+
+	@Override
+	public ArrayList<User> getActiveUser() {
+		String hql = "from User u where u.type = 1";
+		@SuppressWarnings("unchecked")
+		ArrayList<User> userList =(ArrayList<User>) getHibernateTemplate().find(hql);
+		return userList;
+	}
 }

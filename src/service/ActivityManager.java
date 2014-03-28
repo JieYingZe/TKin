@@ -20,5 +20,9 @@ public interface ActivityManager {
 
 	public ClubStatistics showClubStatistics();
 
+	public void participateActivity(int userId, int activityId);
+
+	public void missActivity(int userId, int activityId);
+
 }
 

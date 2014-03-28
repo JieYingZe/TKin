@@ -26,7 +26,7 @@
 	<div class="container">
 	<s:form action="activeUser" theme="bootstrap" cssClass="form-horizontal form-signin">
 		<s:textfield name="paymentRecord.bankCardNo" label="请输入你的银行卡号"></s:textfield>
-		<s:submit value="激活会员卡" cssClass="btn btn-primary btn-large"></s:submit>
+		<s:submit value="激活用户" cssClass="btn btn-primary btn-large"></s:submit>
 	</s:form>
     </div>
 </body>

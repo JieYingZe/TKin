@@ -36,5 +36,20 @@ public class UpdateUserInfoAction extends BaseAction {
 			return ERROR;
 		}
 	}
+	
+	public String updateUserInfoByWaiter() {
+		try {
+			System.out.println("Update User Info By Waiter Action");
+			int userId = user.getUserId();
+			userManager.updateUser(userId, user);
+			return SUCCESS;
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			return ERROR;
+		}
+	}
+
+
 
 }

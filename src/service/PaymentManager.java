@@ -16,5 +16,7 @@ public interface PaymentManager {
 	
 	public ArrayList<PaymentRecordForm> showPaymentRecord(int userId);
 
+	public void autoPayMonthly();
+
 }
 

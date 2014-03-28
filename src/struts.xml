@@ -10,12 +10,12 @@
 <!--————————————————————————————————————————避免眼花的分割线————————————————————————————————————————-->
 		<action name="register" class="regAction">
 			<result name="input">/user/register.jsp</result>
-			<result name="success">/user/success.jsp</result>
+			<result name="success">/user/login.jsp</result>
 			<result name="error">/user/fail.jsp</result>
 		</action>
 		<action name="familyRegister" class="familyregAction">
 			<result name="input">/user/familyregister.jsp</result>
-			<result name="success">/user/success.jsp</result>
+			<result name="success">/user/login.jsp</result>
 			<result name="error">/user/fail.jsp</result>
 		</action>
 <!--————————————————————————————————————————避免眼花的分割线————————————————————————————————————————-->
@@ -49,7 +49,7 @@
 <!--————————————————————————————————————————避免眼花的分割线————————————————————————————————————————-->
 		<action name="addActivity" class="addActivityAction">
 			<result name="input">/waiter/activitynew.jsp</result>
-			<result name="success">/user/success.jsp</result>
+			<result name="success" type="redirect">/waiter/showActivityForWaiter</result>
 			<result name="error">/user/fail.jsp</result>
 		</action>
 		<action name="reserveActivity" class="reserveActivityAction">
@@ -60,7 +60,7 @@
 <!--————————————————————————————————————————避免眼花的分割线————————————————————————————————————————-->
 		<action name="showUser" class="showUserAction">
 			<result name="input">/waiter/login.jsp</result>
-			<result name="success">/user/success.jsp</result>
+			<result name="success">/waiter/user.jsp</result>
 			<result name="error">/user/fail.jsp</result>
 		</action>
 		<action name="showUserInfo" class="showUserInfoAction">
@@ -93,6 +93,26 @@
 		<action name="showClubStatistics" class="showClubStatisticsAction">
 			<result name="input">/manager/login.jsp</result>
 			<result name="success">/manager/clubstatistics.jsp</result>
+			<result name="error">/user/fail.jsp</result>
+		</action>
+		<action name="showUserManage" class="showUserManageAction">
+			<result name="input">/waiter/login.jsp</result>
+			<result name="success">/waiter/usermanage.jsp</result>
+			<result name="error">/user/fail.jsp</result>
+		</action>
+		<action name="updateUserInfoByWaiter" class="updateUserInfoAction" method="updateUserInfoByWaiter">
+			<result name="input">/waiter/login.jsp</result>
+			<result name="success" type="redirect">/waiter/showUser</result>
+			<result name="error">/user/fail.jsp</result>
+		</action>
+		<action name="participateActivity" class="updateActivityRecordAction" method="participateActivity">
+			<result name="input">/waiter/login.jsp</result>
+			<result name="success" type="redirect">/waiter/showUser</result>
+			<result name="error">/user/fail.jsp</result>
+		</action>
+		<action name="missActivity" class="updateActivityRecordAction" method="missActivity">
+			<result name="input">/waiter/login.jsp</result>
+			<result name="success" type="redirect">/waiter/showUser</result>
 			<result name="error">/user/fail.jsp</result>
 		</action>
 	</package>

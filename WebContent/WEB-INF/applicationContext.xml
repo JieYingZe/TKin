@@ -185,7 +185,57 @@
 			<ref bean="activityManager" />
 		</property>
 	</bean>
+	<bean id="showUserManageAction" class="action.ShowUserManageAction" scope="prototype">
+		<property name="userManager">
+			<ref bean="userManager" />
+		</property>
+		<property name="activityManager">
+			<ref bean="activityManager" />
+		</property>
+		<property name="paymentManager">
+			<ref bean="paymentManager" />
+		</property>
+	</bean>
+	<bean id="updateActivityRecordAction" class="action.UpdateActivityRecordAction" scope="prototype">
+		<property name="activityManager">
+			<ref bean="activityManager" />
+		</property>
+	</bean>
+
+	
 
 	<!-- more bean definitions go here -->
+
+        <!-- 使用MethodInvokingJobDetailFactoryBean，任务类可以不实现Job接口，通过targetMethod指定调用方法-->  
+        <!-- 定义目标bean和bean中的方法 -->
+    <bean id="SpringQtzJob" class="action.AutoPayAction">
+    	<property name="paymentManager">
+			<ref bean="paymentManager" />
+		</property>
+    </bean>
+    <bean id="SpringQtzJobMethod" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject">
+            <ref bean="SpringQtzJob"/>
+        </property>
+        <property name="targetMethod">  <!-- 要执行的方法名称 -->
+            <value>autoPayMonthly</value>
+        </property>
+    </bean>
+
+    <!-- ======================== 调度触发器 ======================== -->
+    <bean id="CronTriggerBean" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="jobDetail" ref="SpringQtzJobMethod"></property>
+        <property name="cronExpression" value="0 0 0 1 * ?"></property>
+    </bean>
+
+    <!-- ======================== 调度工厂 ======================== -->
+    <bean id="SpringJobSchedulerFactoryBean" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+        <property name="triggers">
+            <list>
+                <ref bean="CronTriggerBean"/>
+            </list>
+        </property>
+    </bean>  
+
 
 </beans>

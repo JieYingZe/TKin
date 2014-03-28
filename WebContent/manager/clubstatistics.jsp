@@ -17,14 +17,29 @@
     <sb:head/>
 
 </head>
-<body>
-
-    <s:actionerror theme="bootstrap"/>
-    <s:actionmessage theme="bootstrap"/>
-    <s:fielderror theme="bootstrap"/>
-
-	<div class="container">
-		<div id="peopleDaily"></div>
+<body style="padding-top: 60px; padding-bottom: 40px;">
+	<div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="/TKin/manager/welcome.jsp">天健</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li><a href='<s:url action="manager/showUserStatistics"/>'> 查看用户统计</a></li>
+			  <li class="active"><a href='<s:url action="manager/showClubStatistics"/>'> 查看俱乐部统计</a></li>
+            </ul>
+          	<a class="btn btn-primary pull-right" href='<s:url action="logout"/>'> 注销</a>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+    
+        <div class="container">
+ 		<div id="peopleDaily"></div>
 		<div class="hide" id="peopleDailyDataInfo">
 			[<s:iterator value="clubStatistics.peopleCountDaily">
 				[Date.UTC(<s:property value="key" />), <s:property value="value" />],

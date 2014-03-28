@@ -63,6 +63,24 @@ public class ActivityManagerImpl implements ActivityManager {
 	}
 
 	@Override
+	public void participateActivity(int userId, int activityId) {
+		User user = userDao.getUserById(userId);
+		Activity activity = activityDao.getActivityById(activityId);
+		ActivityRecord activityRecord = activityDao.getActivityRecord(user, activity);
+		activityRecord.setStatus(1);
+		activityDao.updateObject(activityRecord);
+	}
+
+	@Override
+	public void missActivity(int userId, int activityId) {
+		User user = userDao.getUserById(userId);
+		Activity activity = activityDao.getActivityById(activityId);
+		ActivityRecord activityRecord = activityDao.getActivityRecord(user, activity);
+		activityRecord.setStatus(2);
+		activityDao.updateObject(activityRecord);
+	}
+	
+	@Override
 	public ArrayList<ActivityForm> showActivityRecord(int userId) {
 		User user = userDao.getUserById(userId);
 		ArrayList<ActivityRecord> activityRecordList = activityDao.getActivityRecord(user);
@@ -71,6 +89,7 @@ public class ActivityManagerImpl implements ActivityManager {
 			ActivityForm activityForm = new ActivityForm();
 			BeanUtils.copyProperties(activityRecord, activityForm);
 			BeanUtils.copyProperties(activityRecord.getActivity(), activityForm);
+			activityForm.setUserId(userId);
 			activityFormList.add(activityForm);
 		}
 		return activityFormList;
@@ -102,4 +121,6 @@ public class ActivityManagerImpl implements ActivityManager {
 		
 		return clubStatistics;
 	}
+
+
 }

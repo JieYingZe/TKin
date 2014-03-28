@@ -2,6 +2,7 @@ package forms;
 
 public class UserForm {
 
+	private int userId;
 	private String username;
 	private String password;
 	private int gender;
@@ -64,6 +65,14 @@ public class UserForm {
 
 	public void setAddress(String address) {
 		this.address = address;
+	}
+
+	public int getUserId() {
+		return userId;
+	}
+
+	public void setUserId(int userId) {
+		this.userId = userId;
 	}
 
 }

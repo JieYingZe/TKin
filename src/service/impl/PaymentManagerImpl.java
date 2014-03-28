@@ -5,6 +5,7 @@ import java.math.BigDecimal;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 
+import model.Family;
 import model.PaymentRecord;
 import model.User;
 
@@ -39,6 +40,8 @@ public class PaymentManagerImpl implements PaymentManager {
 		}
 		paymentRecordForm.setMoney(activeMoney);
 		newPayment(user, paymentRecordForm);
+		user.setQualifications(1);
+		userDao.updateObject(user);
 	}
 	
 	@Override
@@ -73,6 +76,25 @@ public class PaymentManagerImpl implements PaymentManager {
 			paymentRecordFormList.add(paymentRecordForm);
 		}
 		return paymentRecordFormList;
+	}
+
+	@Override
+	public void autoPayMonthly() {
+		ArrayList<User> userList = userDao.getActiveUser();
+		for (User user : userList) {
+			BigDecimal monthlyFee;
+			if (user.getType() == 0) {
+				monthlyFee = new BigDecimal(40.00);
+			} else {
+				Family family= userDao.getFamilyByUserId(user.getUserId());
+				monthlyFee = new BigDecimal(55.00 + 10.00 * family.getNumOfChildren());
+			}
+			
+			PaymentRecordForm paymentRecord = new PaymentRecordForm();
+				paymentRecord.setMoney(monthlyFee);
+				newPayment(user, paymentRecord);
+		}
+		
 	}
 
 

@@ -90,7 +90,11 @@ public class UserManagerImpl implements UserManager {
 	@Override
 	public void updateUser(int userId, UserForm userForm) {
 		User user = userDao.getUserById(userId);
-		BeanUtils.copyProperties(userForm, user);
+		user.setUsername(userForm.getUsername());
+		user.setPassword(userForm.getPassword());
+		user.setGender(userForm.getGender());
+		user.setAge(userForm.getAge());
+		user.setAddress(userForm.getAddress());
 		user.setUserId(userId);
 		userDao.updateObject(user);
 	}

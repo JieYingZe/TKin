@@ -4,6 +4,7 @@ import java.util.Date;
 
 public class ActivityForm {
 
+	private int userId;
 	private int activityId;
 	private String activityName;
 	private Date startTime;
@@ -60,5 +61,11 @@ public class ActivityForm {
 	}
 	public void setStatus(int status) {
 		this.status = status;
+	}
+	public int getUserId() {
+		return userId;
+	}
+	public void setUserId(int userId) {
+		this.userId = userId;
 	}
 }

@@ -28,4 +28,6 @@ public interface ActivityDao {
 
 	public Map<String, Long> getPeopleCountDaily();
 
+	public ActivityRecord getActivityRecord(User user, Activity activity);
+
 }

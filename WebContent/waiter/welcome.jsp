@@ -5,9 +5,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Activity Management Page</title>
-
+<title>天健健身俱乐部</title>
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -30,8 +28,8 @@
 
             <ul class="nav">
               <li><a href='activitynew.jsp'> 新建活动</a></li>
-			  <li class="active"><a href='<s:url action="waiter/showActivityForWaiter" />'>查看所有活动</a></li>
-			  <li><a href='<s:url action="waiter/showUser" />'>查看所有用户</a></li>
+			  <li><a href='<s:url action="showActivityForWaiter" />'>查看所有活动</a></li>
+			  <li><a href='<s:url action="showUser" />'>查看所有用户</a></li>
             </ul>
 			
           	<a class="btn btn-primary pull-right" href='<s:url action="logout"/>'> 注销</a>
@@ -42,24 +40,14 @@
     </div>
     
         <div class="container">
-		<table class="table table-striped table-bordered">
-		    <tr>
-      			<th>活动名称</th>
-      			<th>教练</th>
-      			<th>起始时间</th>
-      			<th>结束时间</th>
-      			<th>地点</th>
-    		</tr>
-			<s:iterator value="activityList">
-				<tr>
-					<td><s:property value="activityName"/></td>
-					<td><s:property value="coach"/></td>
-					<td><s:date name="startTime" format="yyyy-MM-dd hh:mm"/></td>
-					<td><s:date name="endTime" format="yyyy-MM-dd hh:mm"/></td>
-					<td><s:property value="site"/></td>
-				</tr>
-  			</s:iterator>
-		</table>
-    </div>
+    
+    		<div class="hero-unit">
+        	<h1>天行健，君子以自强不息</h1>
+        	<p>@伏尔泰：生命在于运动 </p>
+        	<p>@泰戈尔：静止便是死亡</p>
+        	<p>@希尔康：不会管理自己身体的人，就无资格管理他人；经营不好自己健康的人，又如何经营好他的事业</p>
+      	</div>
+     </div>
+ 
 </body>
 </html>
